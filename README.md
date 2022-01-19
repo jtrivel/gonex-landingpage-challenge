@@ -2,7 +2,7 @@
 
 ### Links
 
-- Live Site URL: [Live Site URL](https://molly-landingpage-challenge.netlify.app/)
+- Live Site URL: [Live Site URL](https://gonex-landingpage-challenge.netlify.app/)
 
 ### Built with
 - SASS
