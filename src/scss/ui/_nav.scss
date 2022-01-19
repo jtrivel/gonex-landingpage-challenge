@@ -1,0 +1,130 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.nav {
+  position: relative;
+  padding: 2rem 0;
+  background-color: v.$blackColor;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #check {
+    display: none;
+  }
+
+  &__icon {
+    color: v.$whiteColor;
+    font-size: 2rem;
+    cursor: pointer;
+    @include m.tablet { 
+      display: none
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 5%;
+    left: 0;
+    right: 0;
+    padding: 4rem 0;
+    background-color: v.$blackColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    transform: translateX(-200rem);
+    transition: all 250ms ease;
+    overflow: hidden;
+    max-width: 76.8rem;
+    margin-inline: auto;
+    border-top: 1px solid v.$whiteColor;
+    z-index: 69;
+
+    @include m.tablet { 
+      position: relative;
+      top: auto;
+      left: auto;
+      left: auto;
+      padding: 0rem;
+      max-width: none;
+      transform: none;
+      flex-direction: row;
+      justify-content: space-around;
+      border: none;
+    }
+  }
+
+  #check:checked ~ &__menu {
+    transform: translate(0);
+  }
+
+  &__link {
+    text-decoration: none;
+    color: v.$whiteColor;
+    text-align: center;
+    transition: all 250ms ease;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    &:hover {
+      color: v.$hoverColor;
+    }
+  }
+
+  &__field {
+    order: -1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: v.$hoverColor;
+      padding: 2rem;
+      background-image: url(../img/svg/icons8-search.svg);
+      background-repeat: no-repeat;
+      background-position: center center, center;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      @include m.tablet { 
+        background-color: transparent;
+      }
+    }
+
+    @include m.tablet { 
+      width: 4rem;
+      height: 4rem;
+      order: 1;
+    }
+
+  }
+
+  &__input {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 2rem;
+
+    &:focus {
+      outline: none;
+      transition: all 250ms ease;
+      border: 1px solid transparent;
+      &:hover:focus {
+        border-bottom: 1px solid v.$hoverColor;
+      }
+    }
+    &::placeholder {
+      color: v.$whiteColor;
+    }
+
+    @include m.tablet { 
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.video {
+  min-height: 50vh;
+  background-image: url(../img/video_background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    gap: 5rem;
+    max-width: 65rem;
+    min-height: 50vh;
+    position: relative;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 4rem;
+  }
+
+  &__logo {
+    width: 10rem;
+  }
+
+  &__heading {
+    color: v.$redColor;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__subheading {
+    color: v.$whiteColor;
+  }
+
+  &__panel {
+    border-top: .3rem solid v.$whiteColor ;
+    background-color: rgba(0, 0, 0, 0.459);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 1rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__left {
+    display: flex;
+  }
+
+  &__icon {
+    color: v.$whiteColor;
+    font-size: 2rem;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 250ms ease;
+    &:hover {
+      color: v.$redColor;
+    }
+  }
+
+  &__number {
+    color: v.$whiteColor;
+  }
+
+  &__center {
+   display: flex;
+    gap: 2rem;
+  }
+
+}

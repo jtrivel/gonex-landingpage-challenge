@@ -1,0 +1,45 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: v.$primaryFont;
+  font-weight: 400;
+  color: v.$blackColor;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 140rem;
+  width: 95%;
+  margin-inline: auto;
+}
+
+.title {
+  color: v.$redColor;
+  text-transform: uppercase;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color:  rgb(157, 157, 157);
+  @include m.tablet { 
+    max-width: 60rem;
+  }
+}
+
+.subtitle2 {
+  text-transform: uppercase;
+  text-align: center;
+  color:  v.$whiteColor;
+  @include m.tablet { 
+    max-width: 60rem;
+  }
+}
+
